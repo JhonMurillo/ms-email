@@ -13,8 +13,8 @@ info:
   component: Email Services
 
 # HTTP Server
-server:
-  port: 8080   # HTTP (Tomcat) port
+# server:
+#  port: 8080   # HTTP (Tomcat) port
 
 
 spring.mail.host: smtp.gmail.com
