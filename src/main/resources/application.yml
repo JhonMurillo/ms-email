@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: email
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  thymeleaf:
+    cache: false             # Allow Thymeleaf templates to be reloaded at runtime
+    prefix: classpath:/templates/    # Trailing / mandatory
+  profiles:
+    active: native 
+## YAML Template.
+info:
+  component: Email Services
+
+# HTTP Server
+server:
+  port: 8082   # HTTP (Tomcat) port
+
+
+spring.mail.host: smtp.gmail.com
+spring.mail.username: jhonmurillo2014@gmail.com
+spring.mail.password: murillo18
+spring.mail.port: 25
+spring.mail.properties.mail.smtp.auth: true
+spring.mail.properties.mail.smtp.starttls.enable: true
+spring.mail.properties.mail.smtp.starttls.required: true
+
+spring.velocity.resource-loader-path: classpath:/templates/
+spring.velocity.cache: false
+        

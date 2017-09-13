@@ -1,0 +1,9 @@
+com.app.email
+com.app.email.interfaces.email
+com.app.email.interfaces.email.facade
+com.app.email.interfaces.email.facade.dto
+com.app.email.interfaces.email.facade.impl
+com.app.email.interfaces.email.facade.web
+com.app.email.jms.messages
+com.app.email.jms.messages.impl
+com.app.email.utils
