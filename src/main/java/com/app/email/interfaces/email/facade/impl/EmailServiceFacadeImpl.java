@@ -1,6 +1,7 @@
 package com.app.email.interfaces.email.facade.impl;
 
 import com.app.email.interfaces.email.facade.EmailServiceFacade;
+import com.app.email.interfaces.email.facade.dto.EmailDTO;
 import com.app.email.interfaces.email.facade.dto.PasswordDTO;
 import com.app.email.utils.ConstantePlantillas;
 import java.util.Date;
@@ -189,4 +190,28 @@ public class EmailServiceFacadeImpl implements EmailServiceFacade {
 //            javaMailSender.send(preparator);
 //        }
 //    }
+
+    @Override
+    public void sendEmail(EmailDTO emailDTO) throws MailException, InterruptedException {
+        Thread.sleep(200);
+        MimeMessagePreparator preparator;
+        preparator = new MimeMessagePreparator() {
+            @Override
+            public void prepare(MimeMessage mimeMessage) throws Exception {
+                MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
+                message.setTo(emailDTO.getTo().toLowerCase());
+                message.setFrom(new InternetAddress(emailDTO.getFrom().toLowerCase()));
+                message.setSubject(emailDTO.getSubject());
+                message.setSentDate(new Date());
+                Map model = new HashMap<>();
+                model.put("MENSAJE", emailDTO.getMessage());
+                String mensaje = VelocityEngineUtils.mergeTemplateIntoString(
+                        velocityEngine, ConstantePlantillas.EMAIL, CHARSET_UTF8, model);
+                message.setText(mensaje, true);
+
+            }
+        };
+        javaMailSender.send(preparator);
+        System.out.println("Email Sent!");
+    }
 }

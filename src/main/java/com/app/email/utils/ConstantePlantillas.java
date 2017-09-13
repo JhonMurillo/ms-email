@@ -16,6 +16,7 @@ public class ConstantePlantillas {
     */ 
     public  static final String CAMBIO_CONTRASENHA = "cambioContrasenha.vm";
     public static final String REGISTRO ="registro.vm";
+    public static final String EMAIL ="email.vm";
     
 //
     

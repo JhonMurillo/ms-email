@@ -5,6 +5,7 @@
  */
 package com.app.email.interfaces.email.facade;
 
+import com.app.email.interfaces.email.facade.dto.EmailDTO;
 import com.app.email.interfaces.email.facade.dto.PasswordDTO;
 import org.springframework.mail.MailException;
 
@@ -17,4 +18,6 @@ public interface EmailServiceFacade {
     public void sendEmailResetPassword(PasswordDTO passwordDTO) throws MailException, InterruptedException;
     
     public void sendEmailRegistry(PasswordDTO passwordDTO) throws MailException, InterruptedException;
+    
+    public void sendEmail(EmailDTO emailDTO) throws MailException, InterruptedException;
 }

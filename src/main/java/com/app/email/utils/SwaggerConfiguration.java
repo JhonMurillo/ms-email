@@ -55,7 +55,7 @@ public class SwaggerConfiguration {
 
     private Predicate<String> paths() {
         return or(
-                regex("/User.*"),
+                regex("/Email.*"),
                 regex("/Auth.*"),
                 regex("/Person.*"));
     }
