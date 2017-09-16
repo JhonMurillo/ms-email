@@ -32,40 +32,40 @@ import org.springframework.mail.MailException;
 @Component
 public class JmsEmailImpl implements JmsEmailService {
 
-    public final static Logger LOG = LoggerFactory.getLogger(JmsEmailImpl.class);
-
-    @Autowired
-    JmsTemplate jmsTemplate;
-
-    @Autowired
-    EmailServiceFacade emailServiceFacade;
-
-    ObjectMapper mapper = ObjectMapperUtil.getInstanceObjectMapper();
-
-    @JmsListener(destination = "${messages.queue.jmsresetpassword}")
-    @Override
-    public void sendEmailResetPassword(String email) {
-        try {
-            PasswordDTO passwordDTO = mapper.convertValue(mapper.readTree(email), PasswordDTO.class);
-            emailServiceFacade.sendEmailResetPassword(passwordDTO);
-        } catch (IOException | IllegalArgumentException e) {
-            LOG.error("Error : " + e);
-        } catch (MailException | InterruptedException ex) {
-            java.util.logging.Logger.getLogger(JmsEmailImpl.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    @JmsListener(destination = "${messages.queue.jmsregistry}")
-    @Override
-    public void sendEmailRegistry(String email) {
-        try {
-            PasswordDTO passwordDTO = mapper.convertValue(mapper.readTree(email), PasswordDTO.class);
-            emailServiceFacade.sendEmailRegistry(passwordDTO);
-        } catch (IOException | IllegalArgumentException e) {
-            LOG.error("Error : " + e);
-        } catch (MailException | InterruptedException ex) {
-            java.util.logging.Logger.getLogger(JmsEmailImpl.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+//    public final static Logger LOG = LoggerFactory.getLogger(JmsEmailImpl.class);
+//
+//    @Autowired
+//    JmsTemplate jmsTemplate;
+//
+//    @Autowired
+//    EmailServiceFacade emailServiceFacade;
+//
+//    ObjectMapper mapper = ObjectMapperUtil.getInstanceObjectMapper();
+//
+//    @JmsListener(destination = "${messages.queue.jmsresetpassword}")
+//    @Override
+//    public void sendEmailResetPassword(String email) {
+//        try {
+//            PasswordDTO passwordDTO = mapper.convertValue(mapper.readTree(email), PasswordDTO.class);
+//            emailServiceFacade.sendEmailResetPassword(passwordDTO);
+//        } catch (IOException | IllegalArgumentException e) {
+//            LOG.error("Error : " + e);
+//        } catch (MailException | InterruptedException ex) {
+//            java.util.logging.Logger.getLogger(JmsEmailImpl.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
+//
+//    @JmsListener(destination = "${messages.queue.jmsregistry}")
+//    @Override
+//    public void sendEmailRegistry(String email) {
+//        try {
+//            PasswordDTO passwordDTO = mapper.convertValue(mapper.readTree(email), PasswordDTO.class);
+//            emailServiceFacade.sendEmailRegistry(passwordDTO);
+//        } catch (IOException | IllegalArgumentException e) {
+//            LOG.error("Error : " + e);
+//        } catch (MailException | InterruptedException ex) {
+//            java.util.logging.Logger.getLogger(JmsEmailImpl.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
 
 }

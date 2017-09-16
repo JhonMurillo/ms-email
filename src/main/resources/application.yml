@@ -14,7 +14,7 @@ info:
 
 # HTTP Server
 server:
-  port: 8082   # HTTP (Tomcat) port
+  port: 8080   # HTTP (Tomcat) port
 
 
 spring.mail.host: smtp.gmail.com

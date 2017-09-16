@@ -6,9 +6,10 @@
 package com.app.email;
 
 import java.util.logging.Logger;
+import javax.servlet.Filter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.Bean;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.scheduling.annotation.EnableAsync;
 
@@ -17,7 +18,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * @author DESARROLLO
  */
 @SpringBootApplication
-@EnableDiscoveryClient
 @EnableJms
 @EnableAsync
 public class EmailServices {
@@ -26,5 +26,10 @@ public class EmailServices {
     public static void main(String[] args) {
         SpringApplication.run(EmailServices.class, args);
         LOG.info("INICIO -- > EmailServices");
+    }
+    
+    @Bean
+    public Filter shallowEtagHeaderFilter() {
+        return new SimpleCORSFilter();
     }
 }

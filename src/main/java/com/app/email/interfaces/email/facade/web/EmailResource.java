@@ -32,7 +32,7 @@ public class EmailResource {
 
     private final Logger logger = LoggerFactory.getLogger(EmailResource.class);
 
-    @RequestMapping(value = "hello")
+    @RequestMapping(value = "hello",method = RequestMethod.GET)
     @ApiOperation(value = "hello", notes = "Return String")
     public String enviarCorreo() {
         return "Hola Jhon";
@@ -44,6 +44,20 @@ public class EmailResource {
         ResponseUtil responseUtil = new ResponseUtil();
         try {
             emailServiceFacade.sendEmailRegistry(passwordDTO);
+            responseUtil = new ResponseUtil("Gracias por comunicarte con nosotros", ConstanteUtil.CODE_OK);
+        } catch (MailException e) {
+            responseUtil = new ResponseUtil("Error Sending Email: " + e.getMessage(), ConstanteUtil.CODE_ERROR);
+        }
+
+        return responseUtil;
+    }
+    
+    @RequestMapping(value = "updatePassword", method = RequestMethod.POST)
+    @ApiOperation(value = "updatePassword", notes = "Return ResponseUtil")
+    public ResponseUtil enviarUpdatePassword(@RequestBody @Valid PasswordDTO passwordDTO) throws InterruptedException {
+        ResponseUtil responseUtil = new ResponseUtil();
+        try {
+            emailServiceFacade.sendEmailResetPassword(passwordDTO);
             responseUtil = new ResponseUtil("Gracias por comunicarte con nosotros", ConstanteUtil.CODE_OK);
         } catch (MailException e) {
             responseUtil = new ResponseUtil("Error Sending Email: " + e.getMessage(), ConstanteUtil.CODE_ERROR);

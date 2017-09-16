@@ -11,8 +11,8 @@ package com.app.email.jms.messages;
  */
 public interface JmsEmailService {
 
-    void sendEmailResetPassword(String email);
-    
-    void sendEmailRegistry(String email);
+//    void sendEmailResetPassword(String email);
+//    
+//    void sendEmailRegistry(String email);
 
 }

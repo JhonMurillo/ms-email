@@ -570,7 +570,7 @@
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-left:18px; padding-bottom:9px; padding-right:18px;">
                         
-                            <span style="font-size:32px"><strong>CLIMA-APP</strong></span>
+                            <span style="font-size:32px"><strong>TURN-APP</strong></span>
                         </td>
                     </tr>
                 </tbody></table>
@@ -633,11 +633,10 @@
                         
                             <h1>BIENVENIDO</h1>
 
-<p>Hola&nbsp;<strong>${NOMBRECOMPLETO}, &nbsp;</strong>gracias por registrarte en nuestra plataforma movil.<br>
-Para iniciar sesión debes ingresar el correo electronico con el que te registraste y la contraseña.<br>
+<p>${MENSAJE}
 <br>
 Atentamente,<br>
-<strong>Clima-App</strong></p>
+<strong>Turn-App</strong></p>
 
                         </td>
                     </tr>
@@ -822,7 +821,7 @@ Atentamente,<br>
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
                         
-                            <em>Copyright © &nbsp;2017 *Clima-App, All rights reserved.</em>
+                            <em>Copyright © &nbsp;2017 *Turn-App, All rights reserved.</em>
                         </td>
                     </tr>
                 </tbody></table>
