@@ -1,4 +1,5 @@
 D:\TurnApp\email-services\src\main\java\com\app\email\interfaces\email\facade\impl\EmailServiceFacadeImpl.java
+D:\TurnApp\email-services\src\main\java\com\app\email\SimpleCORSFilter.java
 D:\TurnApp\email-services\src\main\java\com\app\email\jms\messages\impl\JmsEmailImpl.java
 D:\TurnApp\email-services\src\main\java\com\app\email\EmailServices.java
 D:\TurnApp\email-services\src\main\java\com\app\email\interfaces\email\facade\web\EmailResource.java

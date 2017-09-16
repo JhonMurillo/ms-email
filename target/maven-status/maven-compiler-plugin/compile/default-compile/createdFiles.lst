@@ -6,6 +6,7 @@ com\app\email\utils\ResponseUtil.class
 com\app\email\interfaces\email\facade\EmailServiceFacadeEvento.class
 com\app\email\interfaces\email\facade\dto\EmailDTO.class
 com\app\email\interfaces\email\facade\impl\EmailServiceFacadeImpl$1.class
+com\app\email\SimpleCORSFilter.class
 com\app\email\utils\ConstanteUtil.class
 com\app\email\utils\SwaggerConfiguration.class
 com\app\email\interfaces\email\facade\impl\EmailServiceFacadeImpl.class
